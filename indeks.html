@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login form</title>
+        <link rel = "stylesheet" href = "style.css">
+    </head>
+    <body>
+      <div class="container">
+        <nav class="container-navbar">
+            <div class="brand">
+              <div class="first-name">Dq</div>
+              <div class="last-name">Bazoo</div>
+            </div>
+            <ul class="ul-navbar">
+              <li class="li-navbar" id="login-link">
+                <a class="a-navbar">login</a>
+              </li>
+              <li class="li-navbar" id="signup-link">
+                <a class=" a-navbar">sign up</a>
+              </li>
+            </ul>
+        </nav>
+        <div class="wrapper">
+          <div class="login-container" id="login">
+            <div class="login-form">
+              <h2 class="login-text">Login</h2>
+              <div class="hr"></div>
+              <a class = "p-text" id=s-link>doesn't have account? sign up!</a>
+              <div class="form">
+                <div class="input">
+                  <input type = "text" placeholder = "username" id="usernameInput" class="in-input"><br>
+                </div>
+                <div class="input">
+                  <input type = "password" placeholder = "password" id = "passwordInput" class="in-input"><br>
+                </div>
+              </div>
+              <button onclick="Login()" class = "submit">Login</button>
+            </div>
+          </div>
+        
+          <div class="login-container" id="signup">
+            <div class="login-form">
+              <h2 class="login-text">Sign up</h2>
+              <div class="hr"></div>
+              <a style="font-size:10px" class = "p-text" id="l-link">have account? login!
+              </a>
+              <div class="form">
+                <div class="input">
+                  <input type = "text" id = "usernameSignup" placeholder = "username" class="in-input"><br>
+                </div>
+                <div class="input">
+                  <input type = "password" id="passwordSignup" placeholder = "password" class="in-input"><br>
+                </div>
+              </div>
+              <button onclick="SignUp()" class = "submit">Sign up</button>
+            </div>
+          </div>
+          <div class="credit">
+            <p>created by Fudlail Ziqry Maulana Hadi</p>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script src = "data.js"></script>
+    <script>
+            const loginLink =
+            document.getElementById('login-link');
+            const signupLink =
+            document.getElementById('signup-link');
+            const loginContainer = 
+            document.getElementById('login');
+            const signupContainer =
+            document.getElementById('signup');
+            const haveAccount = 
+            document.getElementById('l-link');
+            const doesntHaveAccount =
+            document.getElementById('s-link');
+            
+            loginLink.addEventListener('click', 
+            function(event) { 
+                event.preventDefault();
+                signupContainer.style.display = 
+                'none';
+                loginContainer.style.display =
+                'flex';
+                loginLink.style.opacity='0.5';
+                loginLink.style.borderColor="crimson";
+                signupLink.style.borderColor="#f3f4f5"
+                signupLink.style.opacity='1';
+                });
+                
+            haveAccount.addEventListener('click',
+            function(event) { 
+                event.preventDefault();
+                signupContainer.style.display = 
+                'none';
+                loginContainer.style.display =
+                'flex';
+                loginLink.style.opacity='0.5';
+                signupLink.style.opacity='1';
+                loginLink.style.borderColor="crimson";
+                signupLink.style.borderColor="#f3f4f5"
+                });
+                
+                
+            loginContainer.style.display='flex'
+            signupContainer.style.display='none'
+            loginLink.style.opacity='0.5'
+            loginLink.style.borderColor = "crimson"
+            
+            signupLink.addEventListener('click',
+            function(event) {
+                event.preventDefault();
+                loginContainer.style.display = 'none';
+                signupContainer.style.display =
+                'flex';
+                loginLink.style.opacity='1';
+                signupLink.style.opacity='0.5';
+                loginLink.style.borderColor="#f3f4f5";
+                signupLink.style.borderColor="crimson"
+                });
+                
+            
+           doesntHaveAccount.addEventListener('click',
+           function(event) {
+                event.preventDefault();
+                loginContainer.style.display = 'none';
+                signupContainer.style.display =
+                'flex';
+                loginLink.style.opacity='1';
+                signupLink.style.opacity='0.5';
+                loginLink.style.borderColor="#f3f4f5";
+                signupLink.style.borderColor="crimson"
+                });
+        </script>
+</html>
